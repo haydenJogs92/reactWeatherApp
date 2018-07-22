@@ -1,0 +1,6 @@
+
+I used these steps to deploy to github pages
+
+https://gist.github.com/cobyism/4730490
+
+https://haydenjogs92.github.io/reactWeatherApp/
