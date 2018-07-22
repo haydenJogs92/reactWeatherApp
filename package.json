@@ -1,7 +1,7 @@
 {
-  "name": "react-tutorials",
+  "name": "weatherapp",
   "version": "0.0.0",
-  "description": "",
+  "description": "A weather app built with redux react",
   "main": "webpack.config.js",
   "dependencies": {
     "axios": "^0.12.0",
@@ -19,6 +19,7 @@
     "react-dom": "^0.14.6",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
+    "redux-freeze": "^0.1.5",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.2.0",
     "redux-thunk": "^2.1.0",
@@ -28,8 +29,17 @@
   "devDependencies": {},
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haydenJogs92/weatherApp.git"
+  },
+  "author": "Hayden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haydenJogs92/weatherApp/issues"
+  },
+  "homepage": "https://github.com/haydenJogs92/weatherApp#readme"
 }
