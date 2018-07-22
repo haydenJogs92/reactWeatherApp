@@ -125,7 +125,7 @@ export default class Layout extends React.Component {
         <div style={pageStyle}>
           <br />
           <br />
-          <h1>How's The Weather?</h1>
+          <h1>How's The Weather Today?</h1>
           <AddCityForm addCityWeather={(city,state) => {this.addCityWeather(city,state)}} />
           <ErrorBox apiError={this.props.apiError} />
           <GoogleWeatherMap

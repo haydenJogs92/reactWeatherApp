@@ -2,11 +2,13 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
+//run webpack -p -production to generate file in build folder
+//run npm start for testing in browser
+//see build version in browser http://localhost:8080/build/index.html
+
 module.exports = {
   context: path.join(__dirname, "src"),
-  devtool: debug ? "inline-sourcemap" : null,
-  //create smaller build for production
-  devtool: 'cheap-module-source-map',
+  devtool: debug ? "inline-sourcemap" : 'cheap-module-source-map',
   entry: "./js/client.js",
   module: {
     loaders: [
@@ -22,12 +24,13 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
+    path: debug ? __dirname + "/src/" : __dirname + "/src/build/",
     filename: "client.min.js"
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')}),
   ],
 };

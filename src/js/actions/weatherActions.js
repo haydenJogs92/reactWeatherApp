@@ -21,7 +21,7 @@ export function fetchWeatherByCity( city, state )
     }
 
 
-    axios.get("http://api.openweathermap.org/data/2.5/weather?q=" + query + "&APPID=" + openWeatherMapKey)
+    axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + query + "&APPID=" + openWeatherMapKey)
       .then((response) => {
         dispatch({type: "FETCH_WEATHER_FULFILLED", payload: response.data})
       })
@@ -37,7 +37,7 @@ export function fetchWeatherByLatLong(lat, long)
   return function(dispatch) {
     //let store know we are fecthing weather
     dispatch({type: "FETCH_WEATHER"});
-    axios.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + openWeatherMapKey)
+    axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + openWeatherMapKey)
       .then((response) => {
         dispatch({type: "FETCH_WEATHER_FULFILLED", payload: response.data})
       })
