@@ -56,11 +56,9 @@ export default class Layout extends React.Component {
 
   }
 
-  addCityWeather( city, state )
+  addCityWeather( city/*, state*/ )
   {
-    console.log(city);
-    console.log(state);
-    this.props.dispatch( fetchWeatherByCity(city, state) );
+    this.props.dispatch( fetchWeatherByCity(city/*, state*/) );
   }
 
   addLatLongWeather( lat, long )
@@ -126,7 +124,7 @@ export default class Layout extends React.Component {
           <br />
           <br />
           <h1>How's The Weather Today?</h1>
-          <AddCityForm addCityWeather={(city,state) => {this.addCityWeather(city,state)}} />
+          <AddCityForm addCityWeather={(city /*,state*/) => {this.addCityWeather(city /*,state*/)}} />
           <ErrorBox apiError={this.props.apiError} />
           <GoogleWeatherMap
             mapMarkerLocations={this.props.weather}

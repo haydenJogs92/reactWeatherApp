@@ -8,25 +8,24 @@ export default class AddCityForm extends React.Component
   handleSubmit = () =>
   {
     const city = this.cityName.value;
-    const state = this.stateName.value;
-    this.props.addCityWeather( city, state );
+    //const state = this.stateName.value;
+    this.props.addCityWeather( city /*, state */);
     this.cityName.value = '';
-    this.stateName.value = '';
+    //this.stateName.value = '';
   }
 
   render()
   {
-  
+
     return (
       <div>
-        <h4>Enter a city or click on the map to view current weather conditions.</h4>
+        <br />
+        <br />
+        <h4>Click any point on the map or enter a city name to view current weather conditions.</h4>
+        <br />
         <label>City</label>
         <br />
-        <input type="text" ref={input => this.cityName = input} />
-        <br />
-        <label>Country Code</label>
-        <br />
-        <input type="text" ref={input => this.stateName = input} placeholder="Optional"/>
+        <input type="text" ref={input => this.cityName = input} placeholder="ex: Chicago" />
         <br />
         <br />
         <button onClick={this.handleSubmit}>Add City</button>

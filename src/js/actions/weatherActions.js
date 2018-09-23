@@ -3,13 +3,14 @@ import {openWeatherMapKey} from '../../api/apiKeys';
 
 
 //change to fetchWeatherByCity
-export function fetchWeatherByCity( city, state )
+export function fetchWeatherByCity( city/*, state*/ )
 {
   return function(dispatch)
   {
     //let store know we are fecthing weather
     dispatch({type: "FETCH_WEATHER"});
 
+    /*
     var query = '';
     if ( state == '')
     {
@@ -19,6 +20,9 @@ export function fetchWeatherByCity( city, state )
     {
       query = city + ',' + state;
     }
+    */
+
+    var query = city;
 
 
     axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + query + "&APPID=" + openWeatherMapKey)
